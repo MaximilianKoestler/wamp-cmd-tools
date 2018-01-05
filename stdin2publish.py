@@ -18,7 +18,7 @@ def main(args):
         async def onJoin(self, details):
             for line in sys.stdin:
                 for topic in args.topic:
-                    self.publish(topic, line[:-1])
+                    self.publish(topic, line.strip())
 
         def onDisconnect(self):
             print('Disconnecting.')
